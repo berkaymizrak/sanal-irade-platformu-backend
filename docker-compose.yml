@@ -1,0 +1,76 @@
+version: "3.8"
+services:
+  postgres_sip:
+    container_name: postgres_sip
+    hostname: postgres_sip
+    image: postgres:latest
+    env_file:
+      - sanal_irade_platformu/docker.env
+    networks:
+      - main_sip
+#    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    volumes:
+      - "postgresql-data:/var/lib/postgresql/data"
+    command: -p 5432
+
+  app_sip:
+    container_name: app_sip
+    hostname: app_sip
+    build:
+      context: .
+      args:
+        REPO_PATH: ./
+      dockerfile: dev.Dockerfile
+    env_file:
+      - sanal_irade_platformu/docker.env
+    environment:
+      - "DATABASE=postgres"
+    volumes:
+      - static-data:/srv/public
+      - .:/srv/app_sip
+    ports:
+      - "0.0.0.0:8000:8000"
+#    restart: unless-stopped
+    depends_on:
+      - postgres_sip
+      - redis_sip
+    command: gunicorn sanal_irade_platformu.wsgi:application --bind 0.0.0.0:8000
+#    command: gunicorn sanal_irade_platformu.wsgi:application --bind 0.0.0.0:8000 --workers 2 --threads 2
+    working_dir: /srv/app_sip
+    networks:
+      - main_sip
+
+  celery_sip:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    command: celery -A sanal_irade_platformu worker -B -l info
+    env_file:
+      - sanal_irade_platformu/docker.env
+    volumes:
+      - static-data:/srv/public
+    depends_on:
+      - app_sip
+      - redis_sip
+    networks:
+      - main_sip
+
+  redis_sip:
+    container_name: redis_sip
+    hostname: redis_sip
+    restart: unless-stopped
+    image: redis:7-alpine
+    expose:
+      - 6379
+    networks:
+      - main_sip
+
+networks:
+  main_sip:
+
+volumes:
+  postgresql-data:
+  static-data:
