@@ -1,0 +1,1 @@
+# sanal-irade-platformu-backend
