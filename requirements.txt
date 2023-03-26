@@ -18,6 +18,7 @@ django-smtp-ssl==1.0
 django-timezone-field==5.0
 gunicorn==20.1.0
 kombu==5.2.4
+Pillow==9.4.0
 prompt-toolkit==3.0.38
 psycopg2==2.9.5
 python-crontab==2.7.1

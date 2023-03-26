@@ -8,7 +8,7 @@ from parler.models import TranslatableModel, TranslatedFields
 
 # Create your models here.
 
-class City(AbstractModel, TranslatableModel):
+class City(TranslatableModel, AbstractModel):
     translations = TranslatedFields(
         name=models.CharField(
             max_length=255,
@@ -33,7 +33,7 @@ class City(AbstractModel, TranslatableModel):
         )
 
 
-class Town(AbstractModel, TranslatableModel):
+class Town(TranslatableModel, AbstractModel):
     translations = TranslatedFields(
         name=models.CharField(
             max_length=255,
@@ -59,7 +59,7 @@ class Town(AbstractModel, TranslatableModel):
         )
 
 
-class District(AbstractModel, TranslatableModel):
+class District(TranslatableModel, AbstractModel):
     translations = TranslatedFields(
         name=models.CharField(
             max_length=255,
@@ -105,8 +105,8 @@ class SocialMedia(AbstractModel):
 
     class Meta:
         ordering = ('order',)
-        verbose_name = _('Social media')
-        verbose_name_plural = _('Social media links')
+        verbose_name = _('Social Media')
+        verbose_name_plural = _('Social Media Links')
 
     def __str__(self):
         return self.get_icon_display()
