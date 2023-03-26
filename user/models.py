@@ -43,3 +43,6 @@ class User(AbstractUser):
     class Meta(AbstractUser.Meta):
         swappable = 'AUTH_USER_MODEL'
         db_table = 'auth_user'
+
+    def __str__(self):
+        return f'{self.get_full_name()} ({self.email})'
