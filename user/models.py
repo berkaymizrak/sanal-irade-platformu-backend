@@ -1,5 +1,6 @@
 from core.models import AbstractModel
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator, MinValueValidator, MaxValueValidator
 from django.utils.translation import gettext_lazy as _
@@ -51,3 +52,29 @@ class User(AbstractUser):
 
     def __str__(self):
         return f'{self.get_full_name()} ({self.email})'
+
+
+class GDPRConsent(AbstractModel):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        verbose_name=_('User'),
+    )
+    agreement = models.CharField(
+        max_length=255,
+        verbose_name=_('Agreement'),
+    )
+    ip_address = models.GenericIPAddressField(
+        verbose_name=_('IP address'),
+    )
+    is_accepted = models.BooleanField(
+        default=False,
+        verbose_name=_('Is accepted'),
+    )
+
+    class Meta:
+        verbose_name = _('GDPR Consent')
+        verbose_name_plural = _('GDPR Consents')
+
+    def __str__(self):
+        return f'{self.user} - {self.is_accepted}'
