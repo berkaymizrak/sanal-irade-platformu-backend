@@ -38,7 +38,12 @@ class User(AbstractUser):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['birth_year', ]  # By doing so create superuser command will ask their input
+    # By doing below, create superuser command will ask their input:
+    REQUIRED_FIELDS = [
+        'first_name',
+        'last_name',
+        'birth_year',
+    ]
 
     class Meta(AbstractUser.Meta):
         swappable = 'AUTH_USER_MODEL'
