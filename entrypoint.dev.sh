@@ -14,7 +14,7 @@ fi
 #python manage.py flush --no-input
 python manage.py migrate --noinput
 python manage.py collectstatic --noinput
-python manage.py createsuperuser --username="$DJANGO_SUPER_USERNAME" --email="$DJANGO_SUPER_USER_EMAIL" --no-input
+python manage.py createsuperuser --email="$DJANGO_SUPER_USER_EMAIL" --birth_year="1990" --no-input
 
 exec "$@"
 
