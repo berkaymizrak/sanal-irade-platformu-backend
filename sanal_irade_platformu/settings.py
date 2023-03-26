@@ -51,11 +51,13 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'mailqueue',
     'django_celery_beat',
+    'parler',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # Language middleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -116,6 +118,27 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = [
+    ('en', 'English'),
+    ('tr', 'Turkish'),
+]
+
+PARLER_DEFAULT_LANGUAGE_CODE = LANGUAGE_CODE
+
+LANGUAGE_CODES = tuple({'code': LANGUAGE[0]} for LANGUAGE in LANGUAGES)
+
+PARLER_LANGUAGES = {
+    1: LANGUAGE_CODES,
+    'default': {
+        'fallbacks': [LANGUAGE_CODE],  # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+        'hide_untranslated': False,  # the default; let .active_translations() return fallbacks too.
+    },
+}
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale/',
+]
 
 TIME_ZONE = 'Europe/Istanbul'
 

@@ -15,6 +15,7 @@ fi
 python manage.py migrate --noinput
 python manage.py collectstatic --noinput
 python manage.py createsuperuser --email="$DJANGO_SUPER_USER_EMAIL" --birth_year="1990" --no-input
+django-admin compilemessages --ignore=env
 
 exec "$@"
 

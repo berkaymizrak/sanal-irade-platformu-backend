@@ -11,4 +11,6 @@ then
     echo "PostgreSQL started"
 fi
 
+django-admin compilemessages --ignore=env
+
 exec "$@"
