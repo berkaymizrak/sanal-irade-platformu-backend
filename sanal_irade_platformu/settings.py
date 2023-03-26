@@ -21,7 +21,6 @@ environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -36,7 +35,6 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS', cast=list)
 # Must be defined for Django 4+
 CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS', cast=list)
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
+    'mailqueue',
     'django_celery_beat',
 ]
 
@@ -82,14 +81,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sanal_irade_platformu.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': env.db(),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -109,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -123,7 +119,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -133,19 +128,16 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # Email settings
 
 vars().update(env.email_url())
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 EMAIL_BACKEND = env('EMAIL_BACKEND')
-
 
 # Celery settings
 CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL', 'redis://redis_resume:6379/0')
@@ -163,3 +155,16 @@ CELERY_TASK_RESULT_EXPIRES = 60 * 60 * 24 * 2  # Seconds (2 days)
 BROKER_POOL_LIMIT = 1
 BROKER_HEARTBEAT = None
 USER_AGENTS_CACHE = None
+
+# Mail Queue settings
+# pip install django-mail-queue
+
+# If you're using Celery, set this to True
+MAILQUEUE_CELERY = True  # DEFAULT False
+
+# Enable the mail queue. If this is set to False, the mail queue will be disabled and emails will be
+# sent immediately instead.
+MAILQUEUE_QUEUE_UP = True
+
+# Maximum amount of emails to send during each queue run
+MAILQUEUE_LIMIT = 1
