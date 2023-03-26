@@ -45,6 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
+    'tools.apps.ToolsConfig',
+    'user.apps.UserConfig',
+    'election.apps.ElectionConfig',
+    'contact.apps.ContactConfig',
     'mailqueue',
     'django_celery_beat',
 ]
