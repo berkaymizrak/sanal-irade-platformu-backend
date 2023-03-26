@@ -70,5 +70,5 @@ def clear_admin_logs(leave_last=100):
     """
     model_say = LogEntry.objects.count()
     if model_say > leave_last:
-        rows = LogEntry.objects.all()[:leave_last].values_list("id", flat=True)  # only retrieve ids.
+        rows = LogEntry.objects.all()[:leave_last].values_list('id', flat=True)  # only retrieve ids.
         LogEntry.objects.exclude(pk__in=list(rows)).delete()
