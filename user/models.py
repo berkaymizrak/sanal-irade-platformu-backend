@@ -1,7 +1,8 @@
 from core.models import AbstractModel
+from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator, MinValueValidator, MaxValueValidator
-from django.db import models
+from django.utils.translation import gettext_lazy as _
 from user.managers import *
 
 
@@ -12,25 +13,25 @@ class User(AbstractUser):
     username = None
     email = models.EmailField(
         unique=True,
-        verbose_name='Email',
+        verbose_name=_('Email'),
     )
     # TODO: Add role field
     identity_number = models.CharField(
         max_length=15,
-        verbose_name='Identity number',
+        verbose_name=_('Identity number'),
     )
     birth_year = models.PositiveSmallIntegerField(
-        verbose_name='Birth year',
+        verbose_name=_('Birth year'),
         validators=(MinValueValidator(1930), MaxValueValidator(2013),),
     )
     phone_extension = models.CharField(
         default='+90',
         max_length=6,
-        verbose_name='Phone extension',
+        verbose_name=_('Phone extension'),
     )
     phone = models.CharField(
         max_length=15,
-        verbose_name='Phone',
+        verbose_name=_('Phone'),
         validators=(RegexValidator(r'^\d{7,15}$'),),
     )
 

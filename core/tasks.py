@@ -2,6 +2,7 @@ from celery import shared_task
 from django.conf import settings
 from django.core.management import call_command
 from django.contrib.admin.models import LogEntry
+from django.utils.translation import gettext_lazy as _
 from mailqueue.models import MailerMessage
 
 
@@ -31,7 +32,7 @@ def send_mail_queued(mail_subject, message_context, to, from_mail=settings.DEFAU
         msg.reply_to = reply_to
 
     # Name of your App that is sending the email.
-    msg.app = 'Sanal İrade Platformu'
+    msg.app = _('Sanal İrade Platformu')
 
     msg.save()
 

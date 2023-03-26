@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
@@ -6,12 +7,12 @@ from django.db import models
 
 class AbstractModel(models.Model):
     updated_date = models.DateTimeField(
-        verbose_name='Updated Date',
+        verbose_name=_('Updated Date'),
         blank=True,
         auto_now=True,
     )
     created_date = models.DateTimeField(
-        verbose_name='Created Date',
+        verbose_name=_('Created Date'),
         blank=True,
         auto_now_add=True,
     )
