@@ -57,3 +57,15 @@ locale
         ├── django.mo
         └── django.po
 ```
+
+Next, create the migrations:
+
+`(env)$ python manage.py makemigrations`
+
+Before proceeding, replace the following line in the newly created migration file:
+
+`bases=(parler.models.TranslatableModelMixin, models.Model),`
+
+With the following one:
+
+`bases = (parler.models.TranslatableModel, models.Model)`

@@ -1,15 +1,19 @@
 from core.models import AbstractModel
+from django.conf import settings
 from django.db import models
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, gettext_lazy as _
 from tools import enums
+from parler.models import TranslatableModel, TranslatedFields
 
 
 # Create your models here.
 
-class City(AbstractModel):
-    name = models.CharField(
-        max_length=255,
-        verbose_name=_('Name'),
+class City(AbstractModel, TranslatableModel):
+    translations = TranslatedFields(
+        name=models.CharField(
+            max_length=255,
+            verbose_name=_('Name'),
+        ),
     )
     code = models.CharField(
         max_length=5,
@@ -17,18 +21,24 @@ class City(AbstractModel):
     )
 
     class Meta:
-        ordering = ('name',)
+        ordering = ('translations__name',)
         verbose_name = _('City')
         verbose_name_plural = _('Cities')
 
     def __str__(self):
-        return self.name
+        return str(
+            self.safe_translation_getter(
+                "name", language_code=get_language() or settings.LANGUAGE_CODE
+            )
+        )
 
 
-class Town(AbstractModel):
-    name = models.CharField(
-        max_length=255,
-        verbose_name=_('Name'),
+class Town(AbstractModel, TranslatableModel):
+    translations = TranslatedFields(
+        name=models.CharField(
+            max_length=255,
+            verbose_name=_('Name'),
+        ),
     )
     city = models.ForeignKey(
         City,
@@ -37,18 +47,24 @@ class Town(AbstractModel):
     )
 
     class Meta:
-        ordering = ('name',)
+        ordering = ('translations__name',)
         verbose_name = _('Town')
         verbose_name_plural = _('Towns')
 
     def __str__(self):
-        return self.name
+        return str(
+            self.safe_translation_getter(
+                "name", language_code=get_language() or settings.LANGUAGE_CODE
+            )
+        )
 
 
-class District(AbstractModel):
-    name = models.CharField(
-        max_length=255,
-        verbose_name=_('Name'),
+class District(AbstractModel, TranslatableModel):
+    translations = TranslatedFields(
+        name=models.CharField(
+            max_length=255,
+            verbose_name=_('Name'),
+        ),
     )
     postal_code = models.CharField(
         max_length=5,
@@ -61,22 +77,22 @@ class District(AbstractModel):
     )
 
     class Meta:
-        ordering = ('name',)
+        ordering = ('translations__name',)
         verbose_name = _('District')
         verbose_name_plural = _('Districts')
 
     def __str__(self):
-        return self.name
+        return str(
+            self.safe_translation_getter(
+                "name", language_code=get_language() or settings.LANGUAGE_CODE
+            )
+        )
 
 
 class SocialMedia(AbstractModel):
     order = models.IntegerField(
         default=10,
         verbose_name=_('Order'),
-    )
-    name = models.CharField(
-        max_length=255,
-        verbose_name=_('Name'),
     )
     url = models.URLField(
         verbose_name=_('URL'),
@@ -93,4 +109,4 @@ class SocialMedia(AbstractModel):
         verbose_name_plural = _('Social media links')
 
     def __str__(self):
-        return self.name
+        return self.get_icon_display()

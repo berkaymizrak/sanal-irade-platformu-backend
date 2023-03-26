@@ -6,6 +6,10 @@ from django.utils.translation import gettext_lazy as _
 
 
 class AbstractModel(models.Model):
+    is_deleted = models.BooleanField(
+        default=False,
+        editable=False,
+    )
     updated_date = models.DateTimeField(
         verbose_name=_('Updated Date'),
         blank=True,

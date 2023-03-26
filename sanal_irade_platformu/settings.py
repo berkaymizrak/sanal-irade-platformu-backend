@@ -117,11 +117,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr-TR'
 
 LANGUAGES = [
-    ('en', 'English'),
     ('tr', 'Turkish'),
+    ('en', 'English'),
 ]
 
 PARLER_DEFAULT_LANGUAGE_CODE = LANGUAGE_CODE
@@ -129,7 +129,7 @@ PARLER_DEFAULT_LANGUAGE_CODE = LANGUAGE_CODE
 LANGUAGE_CODES = tuple({'code': LANGUAGE[0]} for LANGUAGE in LANGUAGES)
 
 PARLER_LANGUAGES = {
-    1: LANGUAGE_CODES,
+    None: LANGUAGE_CODES,
     'default': {
         'fallbacks': [LANGUAGE_CODE],  # defaults to PARLER_DEFAULT_LANGUAGE_CODE
         'hide_untranslated': False,  # the default; let .active_translations() return fallbacks too.
