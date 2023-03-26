@@ -43,7 +43,7 @@ services:
       - main_sip
 
   celery_sip:
-    restart: unless-stopped
+#    restart: unless-stopped
     build:
       context: .
       dockerfile: dev.Dockerfile
@@ -61,7 +61,7 @@ services:
   redis_sip:
     container_name: redis_sip
     hostname: redis_sip
-    restart: unless-stopped
+#    restart: unless-stopped
     image: redis:7-alpine
     expose:
       - 6379

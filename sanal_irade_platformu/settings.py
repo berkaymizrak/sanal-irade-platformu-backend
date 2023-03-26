@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import django_smtp_ssl
-from pathlib import Path
 import environ
+from pathlib import Path
+import os
 
 env = environ.Env(DEBUG=(bool, False))
 environ.Env.read_env()
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +145,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 vars().update(env.email_url())
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 EMAIL_BACKEND = env('EMAIL_BACKEND')
+
+
+# Celery settings
+CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL', 'redis://redis_resume:6379/0')
+CELERY_RESULT_BACKEND = os.environ.get('CELERY_RESULT_BACKEND', 'redis://redis_resume:6379/0')
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_RESULT_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Europe/Istanbul'
+CELERY_ENABLE_UTC = False  # DEFAULT True
+CELERYBEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+
+CELERY_TASK_RESULT_EXPIRES = 60 * 60 * 24 * 2  # Seconds (2 days)
+BROKER_POOL_LIMIT = 1
+BROKER_HEARTBEAT = None
+USER_AGENTS_CACHE = None

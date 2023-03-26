@@ -1,0 +1,9 @@
+Django
+django-environ
+django-smtp-ssl
+gunicorn
+psycopg2
+redis
+celery
+django-celery
+django-celery-beat
