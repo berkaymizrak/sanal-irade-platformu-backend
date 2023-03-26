@@ -6,7 +6,7 @@ from tools.models import *
 
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
-    list_display = ('name', 'code')
+    list_display = ('name', 'code', 'updated_date', 'created_date')
     search_fields = ('name', 'code')
     list_editable = []
 
@@ -16,7 +16,7 @@ class CityAdmin(admin.ModelAdmin):
 
 @admin.register(Town)
 class TownAdmin(admin.ModelAdmin):
-    list_display = ('name', 'city')
+    list_display = ('name', 'city', 'updated_date', 'created_date')
     search_fields = ('name', 'city')
     list_editable = []
 
@@ -26,9 +26,19 @@ class TownAdmin(admin.ModelAdmin):
 
 @admin.register(District)
 class DistrictAdmin(admin.ModelAdmin):
-    list_display = ('name', 'postal_code', 'town')
+    list_display = ('name', 'postal_code', 'town', 'updated_date', 'created_date')
     search_fields = ('name', 'postal_code', 'town')
     list_editable = []
 
     class Meta:
         model = District
+
+
+@admin.register(SocialMedia)
+class SocialMediaAdmin(admin.ModelAdmin):
+    list_display = ['id', 'order', 'name', 'url', 'icon', 'updated_date', 'created_date']
+    search_fields = ['name', 'url']
+    list_editable = ['order', 'name', 'url', 'icon']
+
+    class Meta:
+        model = SocialMedia
