@@ -7,14 +7,13 @@ from django.contrib.auth.admin import UserAdmin
 class UserAdmin(UserAdmin):
     list_display = ('email', 'first_name', 'last_name', 'is_staff', 'is_superuser')
 
-    ordering = ('id', )
+    ordering = ('id',)
 
     fieldsets = (
         (None, {'fields': ('password',)}),
         ('Personal info', {'fields': ('first_name', 'last_name', 'email')}),
-        ('Permissions', {'fields': (
-            'is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'
-        )}),
+        ('Detailed info', {'fields': ('identity_number', 'birth_year', 'phone_extension', 'phone')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
 
