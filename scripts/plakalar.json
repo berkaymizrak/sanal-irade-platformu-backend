@@ -1,0 +1,326 @@
+[
+  {
+    "il_adi": "Adana",
+    "plaka_kodu": " 01"
+  },
+  {
+    "il_adi": "Ad\u0131yaman",
+    "plaka_kodu": "02"
+  },
+  {
+    "il_adi": "Afyonkarahisar",
+    "plaka_kodu": "03"
+  },
+  {
+    "il_adi": "A\u011fr\u0131",
+    "plaka_kodu": "04"
+  },
+  {
+    "il_adi": "Amasya",
+    "plaka_kodu": "05"
+  },
+  {
+    "il_adi": "Ankara",
+    "plaka_kodu": "06"
+  },
+  {
+    "il_adi": "Antalya",
+    "plaka_kodu": "07"
+  },
+  {
+    "il_adi": "Artvin",
+    "plaka_kodu": "08"
+  },
+  {
+    "il_adi": "Ayd\u0131n",
+    "plaka_kodu": "09"
+  },
+  {
+    "il_adi": "Bal\u0131kesir",
+    "plaka_kodu": "10"
+  },
+  {
+    "il_adi": "Bilecik",
+    "plaka_kodu": "11"
+  },
+  {
+    "il_adi": "Bing\u00f6l",
+    "plaka_kodu": "12"
+  },
+  {
+    "il_adi": "Bitlis",
+    "plaka_kodu": "13"
+  },
+  {
+    "il_adi": "Bolu",
+    "plaka_kodu": "14"
+  },
+  {
+    "il_adi": "Burdur",
+    "plaka_kodu": "15"
+  },
+  {
+    "il_adi": "Bursa",
+    "plaka_kodu": "16"
+  },
+  {
+    "il_adi": "\u00c7anakkale",
+    "plaka_kodu": "17"
+  },
+  {
+    "il_adi": "\u00c7ank\u0131r\u0131",
+    "plaka_kodu": "18"
+  },
+  {
+    "il_adi": "\u00c7orum",
+    "plaka_kodu": "19"
+  },
+  {
+    "il_adi": "Denizli",
+    "plaka_kodu": "20"
+  },
+  {
+    "il_adi": "Diyarbak\u0131r",
+    "plaka_kodu": "21"
+  },
+  {
+    "il_adi": "Edirne",
+    "plaka_kodu": "22"
+  },
+  {
+    "il_adi": "Elaz\u0131\u011f",
+    "plaka_kodu": "23"
+  },
+  {
+    "il_adi": "Erzincan",
+    "plaka_kodu": "24"
+  },
+  {
+    "il_adi": "Erzurum",
+    "plaka_kodu": "25"
+  },
+  {
+    "il_adi": "Eski\u015fehir",
+    "plaka_kodu": "26"
+  },
+  {
+    "il_adi": "Gaziantep",
+    "plaka_kodu": "27"
+  },
+  {
+    "il_adi": "Giresun",
+    "plaka_kodu": "28"
+  },
+  {
+    "il_adi": "G\u00fcm\u00fc\u015fhane",
+    "plaka_kodu": "29"
+  },
+  {
+    "il_adi": "Hakkari",
+    "plaka_kodu": "30"
+  },
+  {
+    "il_adi": "Hatay",
+    "plaka_kodu": "31"
+  },
+  {
+    "il_adi": "Isparta",
+    "plaka_kodu": "32"
+  },
+  {
+    "il_adi": "Mersin",
+    "plaka_kodu": "33"
+  },
+  {
+    "il_adi": "\u0130stanbul",
+    "plaka_kodu": "34"
+  },
+  {
+    "il_adi": "\u0130zmir",
+    "plaka_kodu": "35"
+  },
+  {
+    "il_adi": "Kars",
+    "plaka_kodu": "36"
+  },
+  {
+    "il_adi": "Kastamonu",
+    "plaka_kodu": "37"
+  },
+  {
+    "il_adi": "Kayseri",
+    "plaka_kodu": "38"
+  },
+  {
+    "il_adi": "K\u0131rklareli",
+    "plaka_kodu": "39"
+  },
+  {
+    "il_adi": "K\u0131r\u015fehir",
+    "plaka_kodu": "40"
+  },
+  {
+    "il_adi": "Kocaeli",
+    "plaka_kodu": "41"
+  },
+  {
+    "il_adi": "Konya",
+    "plaka_kodu": "42"
+  },
+  {
+    "il_adi": "K\u00fctahya",
+    "plaka_kodu": "43"
+  },
+  {
+    "il_adi": "Malatya",
+    "plaka_kodu": "44"
+  },
+  {
+    "il_adi": "Manisa",
+    "plaka_kodu": "45"
+  },
+  {
+    "il_adi": "Kahramanmara\u015f",
+    "plaka_kodu": "46"
+  },
+  {
+    "il_adi": "Mardin",
+    "plaka_kodu": "47"
+  },
+  {
+    "il_adi": "Mu\u011fla",
+    "plaka_kodu": "48"
+  },
+  {
+    "il_adi": "Mu\u015f",
+    "plaka_kodu": "49"
+  },
+  {
+    "il_adi": "Nev\u015fehir",
+    "plaka_kodu": "50"
+  },
+  {
+    "il_adi": "Ni\u011fde",
+    "plaka_kodu": "51"
+  },
+  {
+    "il_adi": "Ordu",
+    "plaka_kodu": "52"
+  },
+  {
+    "il_adi": "Rize",
+    "plaka_kodu": "53"
+  },
+  {
+    "il_adi": "Sakarya",
+    "plaka_kodu": "54"
+  },
+  {
+    "il_adi": "Samsun",
+    "plaka_kodu": "55"
+  },
+  {
+    "il_adi": "Siirt",
+    "plaka_kodu": "56"
+  },
+  {
+    "il_adi": "Sinop",
+    "plaka_kodu": "57"
+  },
+  {
+    "il_adi": "Sivas",
+    "plaka_kodu": "58"
+  },
+  {
+    "il_adi": "Tekirda\u011f",
+    "plaka_kodu": "59"
+  },
+  {
+    "il_adi": "Tokat",
+    "plaka_kodu": "60"
+  },
+  {
+    "il_adi": "Trabzon",
+    "plaka_kodu": "61"
+  },
+  {
+    "il_adi": "Tunceli",
+    "plaka_kodu": "62"
+  },
+  {
+    "il_adi": "\u015eanl\u0131urfa",
+    "plaka_kodu": "63"
+  },
+  {
+    "il_adi": "U\u015fak",
+    "plaka_kodu": "64"
+  },
+  {
+    "il_adi": "Van",
+    "plaka_kodu": "65"
+  },
+  {
+    "il_adi": "Yozgat",
+    "plaka_kodu": "66"
+  },
+  {
+    "il_adi": "Zonguldak",
+    "plaka_kodu": "67"
+  },
+  {
+    "il_adi": "Aksaray",
+    "plaka_kodu": "68"
+  },
+  {
+    "il_adi": "Bayburt",
+    "plaka_kodu": "69"
+  },
+  {
+    "il_adi": "Karaman",
+    "plaka_kodu": "70"
+  },
+  {
+    "il_adi": "K\u0131r\u0131kkale",
+    "plaka_kodu": "71"
+  },
+  {
+    "il_adi": "Batman",
+    "plaka_kodu": "72"
+  },
+  {
+    "il_adi": "\u015e\u0131rnak",
+    "plaka_kodu": "73"
+  },
+  {
+    "il_adi": "Bart\u0131n",
+    "plaka_kodu": "74"
+  },
+  {
+    "il_adi": "Ardahan",
+    "plaka_kodu": "75"
+  },
+  {
+    "il_adi": "I\u011fd\u0131r",
+    "plaka_kodu": "76"
+  },
+  {
+    "il_adi": "Yalova",
+    "plaka_kodu": "77"
+  },
+  {
+    "il_adi": "Karab\u00fck",
+    "plaka_kodu": "78"
+  },
+  {
+    "il_adi": "Kilis",
+    "plaka_kodu": "79"
+  },
+  {
+    "il_adi": "Osmaniye",
+    "plaka_kodu": "80"
+  },
+  {
+    "il_adi": "D\u00fczce",
+    "plaka_kodu": "81"
+  }
+]
