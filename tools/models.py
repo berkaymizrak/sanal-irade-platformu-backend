@@ -82,11 +82,8 @@ class District(TranslatableModel, AbstractModel):
         verbose_name_plural = _('Districts')
 
     def __str__(self):
-        return str(
-            self.safe_translation_getter(
-                'name', language_code=get_language() or settings.LANGUAGE_CODE
-            )
-        )
+        return f'{self.safe_translation_getter("name", language_code=get_language() or settings.LANGUAGE_CODE)} - ' \
+               f'{self.town} - {self.town.city}'
 
 
 class SocialMedia(AbstractModel):
