@@ -1,14 +1,13 @@
 #!/bin/sh
 
-if [ "$DATABASE" = "postgres" ]
-then
-    echo "Waiting for postgres..."
+if [ "$DATABASE" = "postgres" ]; then
+  echo "Waiting for postgres..."
 
-    while [ "$(pg_isready -h $SQL_HOST -p $SQL_PORT)" != "$SQL_HOST:$SQL_PORT - accepting connections" ]; do
-      sleep 1
-    done
+  while [ "$(pg_isready -h $SQL_HOST -p $SQL_PORT)" != "$SQL_HOST:$SQL_PORT - accepting connections" ]; do
+    sleep 1
+  done
 
-    echo "PostgreSQL started"
+  echo "PostgreSQL started"
 fi
 
 django-admin compilemessages --ignore=env

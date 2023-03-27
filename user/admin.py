@@ -1,14 +1,12 @@
 from django.contrib import admin
-from user.models import User
+from user.models import *
 from django.contrib.auth.admin import UserAdmin
 
 
 @admin.register(User)
 class UserAdmin(UserAdmin):
     list_display = ('email', 'first_name', 'last_name', 'is_staff', 'is_superuser',)
-
     ordering = ('id',)
-
     fieldsets = (
         (None, {'fields': ('password',)}),
         ('Personal info', {'fields': ('first_name', 'last_name', 'email')}),
@@ -17,8 +15,10 @@ class UserAdmin(UserAdmin):
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
 
-#     def get_model_perms(self, request):
-#         return {}
-#
-#     def has_change_permission(self, request, obj=None):
-#         return obj and request.user.id == obj.id
+
+@admin.register(GDPRConsent)
+class GDPRConsentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'agreement', 'ip_address', 'is_accepted', 'updated_date', 'created_date',)
+    list_filter = ('is_accepted', 'agreement',)
+    search_fields = ('user__email', 'user__first_name', 'user__last_name', 'ip_address',)
+    list_editable = ()

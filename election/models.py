@@ -34,7 +34,7 @@ class Election(TranslatableModel, AbstractModel):
     def __str__(self):
         return str(
             self.safe_translation_getter(
-                "name", language_code=get_language() or settings.LANGUAGE_CODE
+                'name', language_code=get_language() or settings.LANGUAGE_CODE
             )
         )
 
