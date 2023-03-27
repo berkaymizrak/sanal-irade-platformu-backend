@@ -80,6 +80,7 @@ class BallotBox(AbstractModel):
     box_number = models.PositiveIntegerField(
         default=0,
         verbose_name=_('Box Number'),
+        unique=True,
     )
     district = models.ForeignKey(
         District,
@@ -125,6 +126,13 @@ class ElectionResult(AbstractModel):
         ordering = ('votes',)
         verbose_name = _('Election Result')
         verbose_name_plural = _('Election Results')
+        constraints = [
+            models.UniqueConstraint(
+                name='%(app_label)s_%(class)s_conditional_unique_candidate_ballot_box',
+                fields=('candidate', 'ballot_box'),
+                condition=models.Q(candidate__isnull=False, ballot_box__isnull=False)
+            ),
+        ]
 
     def __str__(self):
         return f'{self.candidate} - {self.votes}'
