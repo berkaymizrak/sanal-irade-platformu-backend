@@ -15,7 +15,7 @@ class CityAdmin(TranslatableAdmin):
 @admin.register(Town)
 class TownAdmin(TranslatableAdmin):
     list_display = ('name', 'language_column', 'city', 'updated_date', 'created_date',)
-    search_fields = ('translations__name', 'city',)
+    search_fields = ('translations__name', 'city__translations__name',)
     list_editable = ()
 
     class Meta:
@@ -25,7 +25,7 @@ class TownAdmin(TranslatableAdmin):
 @admin.register(District)
 class DistrictAdmin(TranslatableAdmin):
     list_display = ('name', 'language_column', 'postal_code', 'town', 'updated_date', 'created_date',)
-    search_fields = ('translations__name', 'postal_code', 'town',)
+    search_fields = ('translations__name', 'postal_code', 'town__translations__name', 'town__city__translations__name',)
     list_editable = ()
 
     class Meta:
