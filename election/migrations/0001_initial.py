@@ -67,7 +67,7 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Elections',
                 'ordering': ('translations__name',),
             },
-            bases=(parler.models.TranslatableModelMixin, models.Model),
+            bases=(parler.models.TranslatableModel, models.Model),
         ),
         migrations.CreateModel(
             name='ElectionCandidate',
