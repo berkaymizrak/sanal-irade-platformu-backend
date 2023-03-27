@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator, MinValueValidator, MaxValueValidator
 from django.utils.translation import gettext_lazy as _
+from tools.models import District
 from user.managers import *
 
 
@@ -50,8 +51,47 @@ class User(AbstractUser):
         swappable = 'AUTH_USER_MODEL'
         db_table = 'auth_user'
 
+    def save(self, *args, **kwargs):
+        is_new = self.id is None
+        super(User, self).save(*args, **kwargs)
+        if is_new:
+            UserAuthorizedArea.objects.get_or_create(user=self)
+
     def __str__(self):
         return f'{self.get_full_name()} ({self.email})'
+
+
+class UserAuthorizedArea(AbstractModel):
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        verbose_name=_('User'),
+        related_name='user_authorized_area',
+    )
+    district = models.ManyToManyField(
+        District,
+        default=None,
+        blank=True,
+        verbose_name=_('District'),
+    )
+    approved = models.BooleanField(
+        default=False,
+        verbose_name=_('Approved'),
+    )
+
+    class Meta:
+        ordering = ('-created_date',)
+        verbose_name = _('User Authorized Area')
+        verbose_name_plural = _('User Authorized Areas')
+
+    def save(self, *args, **kwargs):
+        instance = UserAuthorizedArea.objects.filter(user=self.user)
+        if len(instance):
+            instance.delete()
+        super(UserAuthorizedArea, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.user} - {self.district}'
 
 
 class GDPRConsent(AbstractModel):
@@ -73,6 +113,7 @@ class GDPRConsent(AbstractModel):
     )
 
     class Meta:
+        ordering = ('-created_date',)
         verbose_name = _('GDPR Consent')
         verbose_name_plural = _('GDPR Consents')
 
