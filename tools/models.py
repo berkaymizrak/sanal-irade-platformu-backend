@@ -64,6 +64,8 @@ class District(TranslatableModel, AbstractModel):
         ),
     )
     postal_code = models.CharField(
+        default='',
+        blank=True,
         max_length=5,
         verbose_name=_('Postal code'),
     )
