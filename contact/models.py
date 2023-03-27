@@ -1,6 +1,8 @@
 from core.models import AbstractModel
-from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
+from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -63,8 +65,19 @@ class Message(AbstractModel):
         verbose_name = _('Message')
         verbose_name_plural = _('Messages')
 
+    def clean(self):
+        """Ensure that only one of `user` and `email`, `first_name` etc. can be set."""
+        if self.user and (self.email or self.first_name or self.last_name or self.phone):
+            raise ValidationError('Only one of the fields can be set. (User or Email, First Name, Last Name, Phone)')
+
     def get_full_name(self):
         return f'{self.first_name} {self.last_name}'
+
+    def get_user_by_email(self):
+        return get_user_model().objects.filter(email=self.email).first()
+
+    def get_user_by_phone(self):
+        return get_user_model().objects.filter(phone=self.phone, phone_extension=self.phone_extension).first()
 
     def __str__(self):
         return f'Message {self.user.get_full_name()} ({self.user.email})' if self.user else f'Message {self.get_full_name()} ({self.email})'
