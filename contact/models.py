@@ -64,6 +64,24 @@ class Message(AbstractModel):
         ordering = ('-created_date',)
         verbose_name = _('Message')
         verbose_name_plural = _('Messages')
+        constraints = [
+            models.CheckConstraint(
+                check=(
+                    models.Q(user__isnull=False) &
+                    models.Q(first_name__isnull=True) &
+                    models.Q(last_name__isnull=True) &
+                    models.Q(email__isnull=True) &
+                    models.Q(phone__isnull=True)
+                ) | (
+                    models.Q(user__isnull=True) &
+                    models.Q(first_name__isnull=False) &
+                    models.Q(last_name__isnull=False) &
+                    models.Q(email__isnull=False) &
+                    models.Q(phone__isnull=False)
+                ),
+                name='only_one_of_user_or_email_first_name_last_name_phone_can_be_set',
+            )
+        ]
 
     def clean(self):
         """Ensure that only one of `user` and `email`, `first_name` etc. can be set."""
