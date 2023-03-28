@@ -10,10 +10,10 @@ services:
       - main_sip
 #    restart: unless-stopped
     ports:
-      - "5432:5432"
+      - "5440:5432"
     volumes:
       - "postgresql-data:/var/lib/postgresql/data"
-    command: -p 5432
+    command: -p 5440
 
   app_sip:
     container_name: app_sip
@@ -31,12 +31,12 @@ services:
       - static-data:/srv/public
       - .:/srv/app_sip
     ports:
-      - "0.0.0.0:8000:8000"
+      - "0.0.0.0:8010:8010"
 #    restart: unless-stopped
     depends_on:
       - postgres_sip
       - redis_sip
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8010
     working_dir: /srv/app_sip
     networks:
       - main_sip
@@ -63,7 +63,7 @@ services:
 #    restart: unless-stopped
     image: redis:7-alpine
     expose:
-      - 6379
+      - 6380
     networks:
       - main_sip
 

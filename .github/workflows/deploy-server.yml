@@ -29,6 +29,6 @@ jobs:
           username: $SSH_USERNAME
           password: $SSH_PASSWORD
           script: |
-            cd /home/sanal-irade-platformu-backend
+            cd /home/berkay/sanal-irade-platformu-backend
             git pull
-            docker compose up --build -d
+            docker compose -f docker-compose.prod.yml up --build -d
