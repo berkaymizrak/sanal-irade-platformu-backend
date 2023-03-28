@@ -8,7 +8,7 @@ ENV VIRTUAL_ENV=/opt/venv
 
 RUN apt-get update
 # Install i18n requirements
-RUN apt-get install gettext -y
+RUN apt-get install gcc gettext -y
 # Install Postgres requirements
 RUN apt-get install libpq-dev python3-dev -y
 RUN apt-get install build-essential -y
