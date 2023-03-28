@@ -62,8 +62,6 @@ services:
     hostname: redis_sip
 #    restart: unless-stopped
     image: redis:7-alpine
-    expose:
-      - 6380
     networks:
       - main_sip
 
