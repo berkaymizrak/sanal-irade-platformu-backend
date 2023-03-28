@@ -38,8 +38,8 @@ RUN pip wheel --no-cache-dir --no-deps --wheel-dir /tmp/wheels -r /tmp/requireme
 # pull official base image
 FROM python:3.9.1-slim
 
-# create the app_user user in app_group
-RUN addgroup app_user && useradd app_user -g app_group
+# create the app_user user
+RUN addgroup app_user && useradd app_user -g app_user
 
 RUN apt-get update
 # Install i18n requirements
@@ -64,7 +64,7 @@ COPY $REPO_PATH /srv/app_sip
 WORKDIR /srv/app_sip
 
 # chown all the files to the app_user user
-RUN chown -R app_user:app_group /srv/app_sip
+RUN chown -R app_user:app_user /srv/app_sip
 
 # change to the app_user user
 USER app_user
