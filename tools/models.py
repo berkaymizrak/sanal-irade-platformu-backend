@@ -52,11 +52,8 @@ class Town(TranslatableModel, AbstractModel):
         verbose_name_plural = _('Towns')
 
     def __str__(self):
-        return str(
-            self.safe_translation_getter(
-                'name', language_code=get_language() or settings.LANGUAGE_CODE
-            )
-        )
+        return f'{self.safe_translation_getter("name", language_code=get_language() or settings.LANGUAGE_CODE)} - ' \
+               f'{self.city}'
 
 
 class District(TranslatableModel, AbstractModel):
@@ -67,6 +64,8 @@ class District(TranslatableModel, AbstractModel):
         ),
     )
     postal_code = models.CharField(
+        default='',
+        blank=True,
         max_length=5,
         verbose_name=_('Postal code'),
     )
@@ -83,7 +82,7 @@ class District(TranslatableModel, AbstractModel):
 
     def __str__(self):
         return f'{self.safe_translation_getter("name", language_code=get_language() or settings.LANGUAGE_CODE)} - ' \
-               f'{self.town} - {self.town.city}'
+               f'{self.town}'
 
 
 class SocialMedia(AbstractModel):

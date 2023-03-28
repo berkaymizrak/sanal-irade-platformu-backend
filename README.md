@@ -1,5 +1,13 @@
 # sanal-irade-platformu-backend
 
+## Setup Cities - Towns - Districts
+
+Run below command to create all cities, towns and districts in the database of tools app.
+
+```
+docker compose run app_sip python manage.py loaddata fixtures/cities_fixture.json
+```
+
 ## Multi-Language Support i18n
 
 ```
