@@ -12,7 +12,7 @@ services:
     ports:
       - "5440:5432"
     volumes:
-      - "postgresql-data:/var/lib/postgresql/data"
+      - "postgresql-data-sip:/var/lib/postgresql/data"
     command: -p 5440
 
   app_sip:
@@ -28,7 +28,7 @@ services:
     environment:
       - "DATABASE=postgres"
     volumes:
-      - static-data:/srv/public
+      - static-data-sip:/srv/public
       - .:/srv/app_sip
     ports:
       - "0.0.0.0:8010:8010"
@@ -50,7 +50,7 @@ services:
     env_file:
       - sanal_irade_platformu/docker.env
     volumes:
-      - static-data:/srv/public
+      - static-data-sip:/srv/public
     depends_on:
       - app_sip
       - redis_sip
@@ -69,5 +69,5 @@ networks:
   main_sip:
 
 volumes:
-  postgresql-data:
-  static-data:
+  postgresql-data-sip:
+  static-data-sip:
