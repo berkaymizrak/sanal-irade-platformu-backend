@@ -16,18 +16,20 @@ class Election(TranslatableModel, AbstractModel):
         ),
     )
     start_date = models.DateTimeField(
+        default=None,
         verbose_name=_('Start Date'),
         blank=True,
-        auto_now=True,
+        null=True,
     )
     end_date = models.DateTimeField(
+        default=None,
         verbose_name=_('End Date'),
         blank=True,
-        auto_now=True,
+        null=True,
     )
 
     class Meta:
-        ordering = ('translations__name',)
+        ordering = ('-start_date',)
         verbose_name = _('Election')
         verbose_name_plural = _('Elections')
 
