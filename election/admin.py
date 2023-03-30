@@ -12,9 +12,10 @@ class ElectionCandidateAdmin(admin.ModelAdmin):
     list_filter = ('election',)
     search_fields = ('name',)
     list_editable = ()
+    autocomplete_fields = ('election',)
 
 
-class ElectionCandidateInline(admin.StackedInline):
+class ElectionCandidateInline(admin.TabularInline):
     model = ElectionCandidate
     extra = 0
     autocomplete_fields = ()
@@ -35,6 +36,7 @@ class BallotBoxAdmin(admin.ModelAdmin):
     list_filter = ('election',)
     search_fields = ('election__translations__name', 'district__translations__name',)
     list_editable = ()
+    autocomplete_fields = ('election', 'district',)
 
 
 @admin.register(ElectionResult)
@@ -43,6 +45,7 @@ class ElectionResultAdmin(admin.ModelAdmin):
     list_filter = ('candidate',)
     search_fields = ('candidate__name', 'ballot_box__district__translations__name',)
     list_editable = ()
+    autocomplete_fields = ('candidate', 'ballot_box',)
 
 
 @admin.register(CandidateReport)
@@ -57,6 +60,7 @@ class CandidateReportAdmin(admin.ModelAdmin):
         'ballot_box_report__user__email',
     )
     list_editable = ()
+    autocomplete_fields = ('ballot_box_report', 'candidate',)
 
 
 class CandidateReportInline(admin.TabularInline):
@@ -71,4 +75,5 @@ class BallotBoxReportAdmin(admin.ModelAdmin):
     list_filter = ('approved', 'ballot_box__election',)
     search_fields = ('ballot_box__election',)
     list_editable = ()
+    autocomplete_fields = ('user', 'ballot_box',)
     inlines = [CandidateReportInline, ]
