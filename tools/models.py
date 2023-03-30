@@ -1,7 +1,7 @@
 from core.models import AbstractModel
-from django.conf import settings
+from core.utils import get_translation
 from django.db import models
-from django.utils.translation import get_language, gettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from tools import enums
 from parler.models import TranslatableModel, TranslatedFields
 
@@ -26,11 +26,7 @@ class City(TranslatableModel, AbstractModel):
         verbose_name_plural = _('Cities')
 
     def __str__(self):
-        return str(
-            self.safe_translation_getter(
-                'name', language_code=get_language() or settings.LANGUAGE_CODE
-            )
-        )
+        return get_translation(self, 'name')
 
 
 class Town(TranslatableModel, AbstractModel):
@@ -52,8 +48,7 @@ class Town(TranslatableModel, AbstractModel):
         verbose_name_plural = _('Towns')
 
     def __str__(self):
-        return f'{self.safe_translation_getter("name", language_code=get_language() or settings.LANGUAGE_CODE)} - ' \
-               f'{self.city}'
+        return f'{get_translation(self, "name")} - {self.city}'
 
 
 class District(TranslatableModel, AbstractModel):
@@ -81,8 +76,7 @@ class District(TranslatableModel, AbstractModel):
         verbose_name_plural = _('Districts')
 
     def __str__(self):
-        return f'{self.safe_translation_getter("name", language_code=get_language() or settings.LANGUAGE_CODE)} - ' \
-               f'{self.town}'
+        return f'{get_translation(self, "name")} - {self.town}'
 
 
 class SocialMedia(AbstractModel):

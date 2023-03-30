@@ -1,7 +1,8 @@
 from core.models import AbstractModel
+from core.utils import get_translation
 from django.conf import settings
 from django.db import models
-from django.utils.translation import get_language, gettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from tools.models import District
 from parler.models import TranslatableModel, TranslatedFields
 
@@ -34,11 +35,7 @@ class Election(TranslatableModel, AbstractModel):
         verbose_name_plural = _('Elections')
 
     def __str__(self):
-        return str(
-            self.safe_translation_getter(
-                'name', language_code=get_language() or settings.LANGUAGE_CODE
-            )
-        )
+        return get_translation(self, 'name')
 
 
 class ElectionCandidate(AbstractModel):
