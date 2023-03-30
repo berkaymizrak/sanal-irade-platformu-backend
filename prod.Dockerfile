@@ -29,7 +29,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 ADD $REPO_PATH/requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /tmp/wheels -r /tmp/requirements.txt
-
+RUN django-admin compilemessages --ignore=env
 
 #########
 # FINAL #
