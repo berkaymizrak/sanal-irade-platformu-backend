@@ -10,8 +10,9 @@ if [ "$DATABASE" = "postgres" ]; then
   echo "PostgreSQL started"
 fi
 
-#if [ "$RUNNER" = "app" ]; then
+if [ "$RUNNER" = "app" ]; then
 #  django-admin compilemessages --ignore=env
-#fi
+  python manage.py migrate --noinput
+fi
 
 exec "$@"

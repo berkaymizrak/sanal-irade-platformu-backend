@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 04:06+0000\n"
+"POT-Creation-Date: 2023-03-30 04:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: contact/models.py:19 election/models.py:153 user/models.py:68
+#: contact/models.py:19 election/models.py:158 user/models.py:68
 #: user/models.py:101
 msgid "User"
 msgstr ""
@@ -95,7 +95,7 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: election/models.py:63 election/models.py:115 election/models.py:206
+#: election/models.py:63 election/models.py:115 election/models.py:211
 msgid "Election Candidate"
 msgstr ""
 
@@ -111,7 +111,7 @@ msgstr ""
 msgid "District"
 msgstr ""
 
-#: election/models.py:94 election/models.py:123 election/models.py:161
+#: election/models.py:94 election/models.py:123 election/models.py:166
 msgid "Ballot Box"
 msgstr ""
 
@@ -119,43 +119,43 @@ msgstr ""
 msgid "Ballot Boxes"
 msgstr ""
 
-#: election/models.py:127 election/models.py:210
+#: election/models.py:127 election/models.py:215
 msgid "Votes"
 msgstr ""
 
-#: election/models.py:132
+#: election/models.py:137
 msgid "Election Result"
 msgstr ""
 
-#: election/models.py:133
+#: election/models.py:138
 msgid "Election Results"
 msgstr ""
 
-#: election/models.py:166
+#: election/models.py:171
 msgid "Report"
 msgstr ""
 
-#: election/models.py:171
+#: election/models.py:176
 msgid "Total Votes"
 msgstr ""
 
-#: election/models.py:175 user/models.py:79
+#: election/models.py:180 user/models.py:79
 msgid "Approved"
 msgstr ""
 
-#: election/models.py:180 election/models.py:198
+#: election/models.py:185 election/models.py:203
 msgid "Ballot Box Report"
 msgstr ""
 
-#: election/models.py:181
+#: election/models.py:186
 msgid "Ballot Box Reports"
 msgstr ""
 
-#: election/models.py:215
+#: election/models.py:220
 msgid "Candidate Report"
 msgstr ""
 
-#: election/models.py:216
+#: election/models.py:221
 msgid "Candidate Reports"
 msgstr ""
 
