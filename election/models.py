@@ -184,7 +184,8 @@ class BallotBoxReport(AbstractModel):
         return self.total_votes - self.candidatereport_set.all().aggregate(models.Sum('votes'))['votes__sum']
 
     def __str__(self):
-        return f'Report {self.user} ({self.ballot_box}) - {self.ballot_box.election}'
+        user = self.user if self.user else '?user?'
+        return f'Report {user} ({self.ballot_box}) - {self.ballot_box.election}'
 
 
 class CandidateReport(AbstractModel):
