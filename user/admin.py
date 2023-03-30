@@ -9,13 +9,14 @@ class UserAuthorizedAreaAdmin(admin.ModelAdmin):
     list_filter = ('approved',)
     search_fields = ('user__email', 'user__first_name', 'user__last_name', 'district__translations__name',)
     list_editable = ('approved',)
-    autocomplete_fields = ('district',)
+    autocomplete_fields = ('user', 'district',)
 
 
 class UserAuthorizedAreaInline(admin.TabularInline):
     model = UserAuthorizedArea
     can_delete = False
     min_num = 1
+    autocomplete_fields = ('district',)
 
 
 @admin.register(User)
@@ -52,3 +53,4 @@ class GDPRConsentAdmin(admin.ModelAdmin):
     list_filter = ('is_accepted', 'agreement',)
     search_fields = ('user__email', 'user__first_name', 'user__last_name', 'ip_address',)
     list_editable = ()
+    autocomplete_fields = ('user',)
