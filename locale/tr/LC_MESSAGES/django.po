@@ -28,8 +28,6 @@ msgid "First Name"
 msgstr "Adı"
 
 #: contact/models.py:33
-#, fuzzy
-#| msgid "Name"
 msgid "Last Name"
 msgstr "Soyadı"
 
@@ -51,8 +49,6 @@ msgstr "Konu"
 
 #: contact/models.py:60 contact/models.py:65
 #: venv/lib/python3.7/site-packages/mailqueue/models.py:58
-#, fuzzy
-#| msgid "Messages"
 msgid "Message"
 msgstr "Mesaj"
 
@@ -80,14 +76,10 @@ msgid "Name"
 msgstr "İsim"
 
 #: election/models.py:21
-#, fuzzy
-#| msgid "Updated Date"
 msgid "Start Date"
 msgstr "Başlangıç Tarihi"
 
 #: election/models.py:27
-#, fuzzy
-#| msgid "Updated Date"
 msgid "End Date"
 msgstr "Bitiş Tarihi"
 
@@ -144,8 +136,6 @@ msgid "Report"
 msgstr "Rapor"
 
 #: election/models.py:176
-#, fuzzy
-#| msgid "Postal code"
 msgid "Total Votes"
 msgstr "Toplam Oy"
 
@@ -233,14 +223,10 @@ msgid "Icon"
 msgstr "İkon"
 
 #: tools/models.py:98
-#, fuzzy
-#| msgid "Social media"
 msgid "Social Media"
 msgstr "Sosyal medya"
 
 #: tools/models.py:99
-#, fuzzy
-#| msgid "Social media links"
 msgid "Social Media Links"
 msgstr "Sosyal medya bağlantıları"
 
@@ -1956,8 +1942,6 @@ msgid "group id"
 msgstr ""
 
 #: venv/lib/python3.7/site-packages/djcelery/models.py:71
-#, fuzzy
-#| msgid "Created Date"
 msgid "created at"
 msgstr "Oluşturulma Tarihi"
 
