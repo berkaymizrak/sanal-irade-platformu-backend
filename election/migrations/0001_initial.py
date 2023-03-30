@@ -111,13 +111,13 @@ class Migration(migrations.Migration):
                 ('updated_date', models.DateTimeField(auto_now=True, verbose_name='Updated Date')),
                 ('created_date', models.DateTimeField(auto_now_add=True, verbose_name='Created Date')),
                 ('votes', models.PositiveIntegerField(default=0, verbose_name='Votes')),
-                ('ballet_box_report', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.SET_NULL, to='election.ballotboxreport', verbose_name='Ballot Box Report')),
+                ('ballot_box_report', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.SET_NULL, to='election.ballotboxreport', verbose_name='Ballot Box Report')),
                 ('candidate', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.SET_NULL, to='election.electioncandidate', verbose_name='Election Candidate')),
             ],
             options={
                 'verbose_name': 'Candidate Report',
                 'verbose_name_plural': 'Candidate Reports',
-                'ordering': ('-ballet_box_report', '-created_date'),
+                'ordering': ('-ballot_box_report', '-created_date'),
             },
         ),
         migrations.AddField(

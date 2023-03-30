@@ -179,7 +179,7 @@ class BallotBoxReport(AbstractModel):
 
 
 class CandidateReport(AbstractModel):
-    ballet_box_report = models.ForeignKey(
+    ballot_box_report = models.ForeignKey(
         BallotBoxReport,
         default=None,
         null=True,
@@ -201,9 +201,9 @@ class CandidateReport(AbstractModel):
     )
 
     class Meta:
-        ordering = ('-ballet_box_report', '-created_date',)
+        ordering = ('-ballot_box_report', '-created_date',)
         verbose_name = _('Candidate Report')
         verbose_name_plural = _('Candidate Reports')
 
     def __str__(self):
-        return f'Report Line ({self.ballet_box_report})'
+        return f'Report Line ({self.ballot_box_report})'

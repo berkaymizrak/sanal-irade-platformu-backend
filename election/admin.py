@@ -47,14 +47,14 @@ class ElectionResultAdmin(admin.ModelAdmin):
 
 @admin.register(CandidateReport)
 class CandidateReportAdmin(admin.ModelAdmin):
-    list_display = ('ballet_box_report', 'candidate', 'votes',)
-    list_filter = ('candidate',)
+    list_display = ('ballot_box_report', 'candidate', 'votes',)
+    list_filter = ('ballot_box_report__approved', 'candidate__election', 'candidate',)
     search_fields = (
         'candidate__name',
-        'ballet_box_report__ballot_box__district__translations__name',
-        'ballet_box_report__user__first_name',
-        'ballet_box_report__user__last_name',
-        'ballet_box_report__user__email',
+        'ballot_box_report__ballot_box__district__translations__name',
+        'ballot_box_report__user__first_name',
+        'ballot_box_report__user__last_name',
+        'ballot_box_report__user__email',
     )
     list_editable = ()
 
