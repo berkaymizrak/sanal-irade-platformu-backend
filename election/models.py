@@ -59,7 +59,7 @@ class ElectionCandidate(AbstractModel):
     )
 
     class Meta:
-        ordering = ('name',)
+        ordering = ('-election__start_date', 'name',)
         verbose_name = _('Election Candidate')
         verbose_name_plural = _('Election Candidates')
 
@@ -79,7 +79,6 @@ class BallotBox(AbstractModel):
     box_number = models.PositiveIntegerField(
         default=0,
         verbose_name=_('Box Number'),
-        unique=True,
     )
     district = models.ForeignKey(
         District,
@@ -91,9 +90,16 @@ class BallotBox(AbstractModel):
     )
 
     class Meta:
-        ordering = ('-election__start_date', 'box_number',)
+        ordering = ('-election__start_date', 'election__translations__name', 'box_number',)
         verbose_name = _('Ballot Box')
         verbose_name_plural = _('Ballot Boxes')
+        constraints = [
+            models.UniqueConstraint(
+                name='%(app_label)s_%(class)s_conditional_unique_election_box_number',
+                fields=('election', 'box_number'),
+                condition=models.Q(election__isnull=False)
+            ),
+        ]
 
     def __str__(self):
         return f'Box {self.box_number}'
@@ -122,7 +128,7 @@ class ElectionResult(AbstractModel):
     )
 
     class Meta:
-        ordering = ('votes',)
+        ordering = ('-ballot_box__election__start_date', 'ballot_box__election__translations__name', 'ballot_box__box_number', 'candidate__name',)
         verbose_name = _('Election Result')
         verbose_name_plural = _('Election Results')
         constraints = [
@@ -170,9 +176,12 @@ class BallotBoxReport(AbstractModel):
     )
 
     class Meta:
-        ordering = ('-ballot_box__election__start_date', '-created_date',)
+        ordering = ('-ballot_box__election__start_date', 'ballot_box__election__translations__name', '-created_date',)
         verbose_name = _('Ballot Box Report')
         verbose_name_plural = _('Ballot Box Reports')
+
+    def get_invalid_votes(self):
+        return self.total_votes - self.candidatereport_set.all().aggregate(models.Sum('votes'))['votes__sum']
 
     def __str__(self):
         return f'Report {self.user} ({self.ballot_box}) - {self.ballot_box.election}'
