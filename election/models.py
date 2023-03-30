@@ -128,7 +128,12 @@ class ElectionResult(AbstractModel):
     )
 
     class Meta:
-        ordering = ('-ballot_box__election__start_date', 'ballot_box__election__translations__name', 'ballot_box__box_number', 'candidate__name',)
+        ordering = (
+            '-ballot_box__election__start_date',
+            'ballot_box__election__translations__name',
+            'ballot_box__box_number',
+            'candidate__name',
+        )
         verbose_name = _('Election Result')
         verbose_name_plural = _('Election Results')
         constraints = [
