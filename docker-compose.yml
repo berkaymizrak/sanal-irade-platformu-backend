@@ -27,6 +27,7 @@ services:
       - sanal_irade_platformu/docker.env
     environment:
       - "DATABASE=postgres"
+      - "RUNNER=app"
     volumes:
       - static-data-sip:/srv/public
       - .:/srv/app_sip
