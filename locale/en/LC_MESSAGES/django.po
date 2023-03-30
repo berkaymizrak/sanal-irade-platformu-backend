@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-26 17:38+0000\n"
+"POT-Creation-Date: 2023-03-30 04:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: contact/models.py:19 election/models.py:153 user/models.py:68
+#: user/models.py:101
+msgid "User"
+msgstr ""
+
+#: contact/models.py:26
+msgid "First Name"
+msgstr ""
+
+#: contact/models.py:33
+msgid "Last Name"
+msgstr ""
+
+#: contact/models.py:40 user/models.py:18
+msgid "Email"
+msgstr ""
+
+#: contact/models.py:45 user/models.py:32
+msgid "Phone extension"
+msgstr ""
+
+#: contact/models.py:52 user/models.py:36
+msgid "Phone"
+msgstr ""
+
+#: contact/models.py:57 venv/lib/python3.7/site-packages/mailqueue/models.py:42
+msgid "Subject"
+msgstr ""
+
+#: contact/models.py:60 contact/models.py:65
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:58
+msgid "Message"
+msgstr ""
+
+#: contact/models.py:66
+#: venv/lib/python3.7/site-packages/django/contrib/messages/apps.py:7
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:59
+msgid "Messages"
+msgstr ""
 
 #: core/models.py:14
 msgid "Updated Date"
@@ -28,6 +68,95 @@ msgstr ""
 
 #: core/tasks.py:35
 msgid "Sanal İrade Platformu"
+msgstr ""
+
+#: election/models.py:16 election/models.py:52 tools/models.py:15
+#: tools/models.py:36 tools/models.py:58
+msgid "Name"
+msgstr ""
+
+#: election/models.py:21
+msgid "Start Date"
+msgstr ""
+
+#: election/models.py:27
+msgid "End Date"
+msgstr ""
+
+#: election/models.py:34 election/models.py:48 election/models.py:77
+msgid "Election"
+msgstr ""
+
+#: election/models.py:35
+msgid "Elections"
+msgstr ""
+
+#: election/models.py:57
+msgid "Logo"
+msgstr ""
+
+#: election/models.py:63 election/models.py:115 election/models.py:206
+msgid "Election Candidate"
+msgstr ""
+
+#: election/models.py:64
+msgid "Election Candidates"
+msgstr ""
+
+#: election/models.py:81
+msgid "Box Number"
+msgstr ""
+
+#: election/models.py:89 tools/models.py:75 user/models.py:75
+msgid "District"
+msgstr ""
+
+#: election/models.py:94 election/models.py:123 election/models.py:161
+msgid "Ballot Box"
+msgstr ""
+
+#: election/models.py:95
+msgid "Ballot Boxes"
+msgstr ""
+
+#: election/models.py:127 election/models.py:210
+msgid "Votes"
+msgstr ""
+
+#: election/models.py:132
+msgid "Election Result"
+msgstr ""
+
+#: election/models.py:133
+msgid "Election Results"
+msgstr ""
+
+#: election/models.py:166
+msgid "Report"
+msgstr ""
+
+#: election/models.py:171
+msgid "Total Votes"
+msgstr ""
+
+#: election/models.py:175 user/models.py:79
+msgid "Approved"
+msgstr ""
+
+#: election/models.py:180 election/models.py:198
+msgid "Ballot Box Report"
+msgstr ""
+
+#: election/models.py:181
+msgid "Ballot Box Reports"
+msgstr ""
+
+#: election/models.py:215
+msgid "Candidate Report"
+msgstr ""
+
+#: election/models.py:216
+msgid "Candidate Reports"
 msgstr ""
 
 #: tools/enums.py:6
@@ -50,63 +179,55 @@ msgstr ""
 msgid "Telegram"
 msgstr ""
 
-#: tools/models.py:12 tools/models.py:31 tools/models.py:51 tools/models.py:79
-msgid "Name"
-msgstr ""
-
-#: tools/models.py:16
+#: tools/models.py:20
 msgid "Code"
 msgstr ""
 
-#: tools/models.py:21 tools/models.py:36
+#: tools/models.py:25 tools/models.py:42
 msgid "City"
 msgstr ""
 
-#: tools/models.py:22
+#: tools/models.py:26
 msgid "Cities"
 msgstr ""
 
-#: tools/models.py:41 tools/models.py:60
+#: tools/models.py:47 tools/models.py:70
 msgid "Town"
 msgstr ""
 
-#: tools/models.py:42
+#: tools/models.py:48
 msgid "Towns"
 msgstr ""
 
-#: tools/models.py:55
+#: tools/models.py:65
 msgid "Postal code"
 msgstr ""
 
-#: tools/models.py:65
-msgid "District"
-msgstr ""
-
-#: tools/models.py:66
+#: tools/models.py:76
 msgid "Districts"
 msgstr ""
 
-#: tools/models.py:75
+#: tools/models.py:85
 #: venv/lib/python3.7/site-packages/django/forms/formsets.py:405
 #: venv/lib/python3.7/site-packages/django/forms/formsets.py:412
 msgid "Order"
 msgstr ""
 
-#: tools/models.py:82
+#: tools/models.py:88
 #: venv/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2312
 msgid "URL"
 msgstr ""
 
-#: tools/models.py:85
+#: tools/models.py:91
 msgid "Icon"
 msgstr ""
 
-#: tools/models.py:92
-msgid "Social media"
+#: tools/models.py:98
+msgid "Social Media"
 msgstr ""
 
-#: tools/models.py:93
-msgid "Social media links"
+#: tools/models.py:99
+msgid "Social Media Links"
 msgstr ""
 
 #: user/managers.py:10
@@ -121,29 +242,336 @@ msgstr ""
 msgid "Superuser must have is_superuser=True."
 msgstr ""
 
-#: user/models.py:16
-msgid "Email"
-msgstr ""
-
-#: user/models.py:21
+#: user/models.py:23
 msgid "Identity number"
 msgstr ""
 
-#: user/models.py:24
+#: user/models.py:26
 msgid "Birth year"
 msgstr ""
 
-#: user/models.py:30
-msgid "Phone extension"
+#: user/models.py:84
+msgid "User Authorized Area"
 msgstr ""
 
-#: user/models.py:34
-msgid "Phone"
+#: user/models.py:85
+msgid "User Authorized Areas"
 msgstr ""
 
-#: venv/lib/python3.7/site-packages/django/contrib/messages/apps.py:7
-msgid "Messages"
+#: user/models.py:105
+msgid "Agreement"
 msgstr ""
+
+#: user/models.py:108
+#: venv/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1906
+msgid "IP address"
+msgstr ""
+
+#: user/models.py:112
+msgid "Is accepted"
+msgstr ""
+
+#: user/models.py:117
+msgid "GDPR Consent"
+msgstr ""
+
+#: user/models.py:118
+msgid "GDPR Consents"
+msgstr ""
+
+#: venv/djcelery/templates/admin/djcelery/change_list.html:7
+#: venv/djcelery/templates/djcelery/confirm_rate_limit.html:6
+msgid "Home"
+msgstr ""
+
+#: venv/djcelery/templates/djcelery/confirm_rate_limit.html:9
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:174
+msgid "Rate limit selected tasks"
+msgstr ""
+
+#: venv/djcelery/templates/djcelery/confirm_rate_limit.html:22
+msgid "Rate limit"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/_termui_impl.py:496
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/_termui_impl.py:500
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:1097
+msgid "Aborted!"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:1282
+#: venv/lib/python3.7/site-packages/click/decorators.py:495
+msgid "Show this message and exit."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:1313
+#: venv/lib/python3.7/site-packages/click/core.py:1339
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:1357
+msgid "Options"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:1383
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:1399
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:1605
+msgid "Commands"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:1637
+msgid "Missing command."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:1715
+msgid "No such command {name!r}."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:2271
+msgid "Value must be an iterable."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:2291
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:2734
+#, python-brace-format
+msgid "env var: {var}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:2764
+msgid "(dynamic)"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:2777
+#, python-brace-format
+msgid "default: {default}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/core.py:2790
+msgid "required"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/decorators.py:400
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/decorators.py:464
+msgid "Show the version and exit."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:43
+#: venv/lib/python3.7/site-packages/click/exceptions.py:79
+#, python-brace-format
+msgid "Error: {message}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:71
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:120
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:122
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:178
+msgid "Missing argument"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:180
+msgid "Missing option"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:182
+msgid "Missing parameter"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:184
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:191
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:211
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:223
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:261
+msgid "unknown error"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/exceptions.py:268
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/parser.py:231
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/parser.py:413
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/parser.py:474
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.7/site-packages/click/shell_completion.py:316
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/shell_completion.py:322
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/termui.py:160
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/termui.py:176
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/termui.py:178
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/termui.py:189
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/termui.py:245
+msgid "Error: invalid input"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/termui.py:776
+msgid "Press any key to continue..."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:265
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:297
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:387
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:409
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:465
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:606
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:630
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:811
+msgid "file"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:813
+msgid "directory"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:815
+msgid "path"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:861
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:870
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:878
+#, python-brace-format
+msgid "{name} '{filename}' is a directory."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:887
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:896
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:905
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/click/types.py:972
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
+msgstr[1] ""
 
 #: venv/lib/python3.7/site-packages/django/contrib/sitemaps/apps.py:8
 msgid "Site Maps"
@@ -458,10 +886,6 @@ msgstr ""
 
 #: venv/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1875
 msgid "IPv4 address"
-msgstr ""
-
-#: venv/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1906
-msgid "IP address"
 msgstr ""
 
 #: venv/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1986
@@ -1322,4 +1746,484 @@ msgstr ""
 
 #: venv/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:249
 msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:53
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:60
+#: venv/lib/python3.7/site-packages/djcelery/models.py:34
+#: venv/lib/python3.7/site-packages/djcelery/models.py:335
+msgid "state"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:67
+#: venv/lib/python3.7/site-packages/djcelery/models.py:344
+msgid "ETA"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:74
+msgid "when"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:81
+#: venv/lib/python3.7/site-packages/djcelery/models.py:211
+#: venv/lib/python3.7/site-packages/djcelery/models.py:339
+msgid "name"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:115
+msgid "Task detail"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:116
+msgid "Tasks"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:131
+#: venv/lib/python3.7/site-packages/djcelery/models.py:337
+msgid "UUID"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:155
+msgid "Revoke selected tasks"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:161
+msgid "Terminate selected tasks"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:167
+msgid "Kill selected tasks"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:187
+msgid "Rate limit selection"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:212
+msgid "Node detail"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:213
+msgid "Worker Nodes"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:220
+msgid "Shutdown selected worker nodes"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:224
+msgid "Enable event mode for selected nodes."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:229
+msgid "Disable event mode for selected nodes."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:281
+msgid "Task (registered)"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:283
+msgid "Task (custom)"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:296
+msgid "Need name of task"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/admin.py:307
+#, python-format
+msgid "Unable to parse JSON: %s"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:10
+#, python-brace-format
+msgid "{num} year ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:10
+#, python-brace-format
+msgid "{num} years ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:14
+#, python-brace-format
+msgid "{num} month ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:14
+#, python-brace-format
+msgid "{num} months ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:18
+#, python-brace-format
+msgid "{num} week ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:18
+#, python-brace-format
+msgid "{num} weeks ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:22
+#, python-brace-format
+msgid "{num} day ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:22
+#, python-brace-format
+msgid "{num} days ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:56
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:71
+msgid "just now"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:62
+#, python-brace-format
+msgid "{minutes} minute ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:63
+#, python-brace-format
+msgid "{minutes} minutes ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:68
+#, python-brace-format
+msgid "{seconds} second ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:69
+#, python-brace-format
+msgid "{seconds} seconds ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:74
+#, python-brace-format
+msgid "{hours} hour ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:74
+#, python-brace-format
+msgid "{hours} hours ago"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/humanize.py:78
+#, python-brace-format
+msgid "yesterday at {time}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:32
+msgid "task id"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:38
+msgid "done at"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:39
+#: venv/lib/python3.7/site-packages/djcelery/models.py:347
+msgid "traceback"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:50
+msgid "task state"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:51
+msgid "task states"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:69
+msgid "group id"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:71
+msgid "created at"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:78
+msgid "saved group result"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:79
+msgid "saved group results"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:91
+msgid "Days"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:92
+msgid "Hours"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:93
+msgid "Minutes"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:94
+msgid "Seconds"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:95
+msgid "Microseconds"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:100
+msgid "every"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:102
+msgid "period"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:106
+#: venv/lib/python3.7/site-packages/djcelery/models.py:217
+msgid "interval"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:107
+msgid "intervals"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:127
+#, python-brace-format
+msgid "every {0.period_singular}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:128
+#, python-brace-format
+msgid "every {0.every:d} {0.period}"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:137
+msgid "minute"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:138
+msgid "hour"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:140
+msgid "day of week"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:143
+msgid "day of month"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:146
+msgid "month of year"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:150
+#: venv/lib/python3.7/site-packages/djcelery/models.py:220
+msgid "crontab"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:151
+msgid "crontabs"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:212
+msgid "Useful description"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:214
+msgid "task name"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:221
+msgid "Use one of interval/crontab"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:224
+#: venv/lib/python3.7/site-packages/djcelery/models.py:342
+msgid "Arguments"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:225
+msgid "JSON encoded positional arguments"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:228
+#: venv/lib/python3.7/site-packages/djcelery/models.py:343
+msgid "Keyword arguments"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:229
+msgid "JSON encoded keyword arguments"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:232
+msgid "queue"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:233
+msgid "Queue defined in CELERY_QUEUES"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:236
+msgid "exchange"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:239
+msgid "routing key"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:242
+#: venv/lib/python3.7/site-packages/djcelery/models.py:345
+msgid "expires"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:245
+msgid "enabled"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:255
+msgid "description"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:261
+msgid "periodic task"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:262
+msgid "periodic tasks"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:301
+msgid "hostname"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:302
+msgid "last heartbeat"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:309
+#: venv/lib/python3.7/site-packages/djcelery/models.py:354
+msgid "worker"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:310
+msgid "workers"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:341
+msgid "event received at"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:346
+msgid "result"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:349
+msgid "execution time"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:350
+msgid "in seconds if task succeeded"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:352
+msgid "number of retries"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:362
+msgid "task"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/djcelery/models.py:363
+msgid "tasks"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/kombu/transport/qpid.py:1309
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/kombu/transport/qpid.py:1314
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/kombu/transport/qpid.py:1332
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/admin.py:28
+msgid "(Re-)send emails immediately"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/admin.py:37
+msgid "Mark emails as un-sent (re-send them via queue)"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/admin.py:43
+msgid "Emails queued."
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/admin.py:45
+msgid "Send failed"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:40
+msgid "Created"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:43
+msgid "To"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:44
+msgid "CC"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:45
+msgid "BCC"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:46
+msgid "From"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:47
+msgid "Reply to"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:48
+msgid "Content"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:49
+msgid "HTML Content"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:50
+msgid "App"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:51
+msgid "Sent"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:52
+msgid "Last attempt"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:147
+msgid "Attachment"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/mailqueue/models.py:148
+msgid "Attachments"
+msgstr ""
+
+#: venv/lib/python3.7/site-packages/timezone_field/rest_framework.py:12
+msgid "A valid timezone is required."
 msgstr ""
