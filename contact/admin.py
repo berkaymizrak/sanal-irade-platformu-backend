@@ -21,3 +21,4 @@ class MessageAdmin(admin.ModelAdmin):
         'message',
     )
     list_editable = ()
+    autocomplete_fields = ('user',)
